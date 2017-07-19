@@ -25,7 +25,7 @@ There are 3 main functions of this code;
   - Fetch `.dat` files from [_OpenADAS_](http://open.adas.ac.uk) and copy them into a directory at `json_database/adas_data`
   - Files are downloaded for the (*element*, *year(shorthand)*) pairs supplied as the `element=` variable in the `makefile` header, or alternatively as the `--elements=$(elements)` argument supplied to `fetch_adas_data.py`.
   - Modifying the `makefile` header is the preferred method for setting this command.
-  - Be careful with the syntax if setting this variable to a custom list. The [command-line argument interpreter](#python_syntax) is listed below in case you run into errors.
+  - Be careful with the syntax if setting this variable to a custom list. The command-line argument interpreter is listed below in case you run into errors.
 
 2. **`make setup`**
   - Build the fortran helper files in `src`.
@@ -41,7 +41,7 @@ N.b. **`make clean`** and **`make clean_refetch`**
   - To revert to the clean-install state run `make clean_refetch`.
   - To clean out the functions from `make setup` but keep the downloaded `.dat` and processed `.json` files run `make clean`.
 
-##<a name="python_syntax"></a> Code for reading the command line argument 
+## Code for reading the command line argument 
 For interpreting list supplied to `fetch_adas_data.py` via `--elements=$(elements)` 
 
 If the code is returning errors while you are trying to define your own list of (*element*, *year(shorthand)*) pairs in the `makefile` header then they will almost certainly be coming from `fetch_adas_data.py` (line 225-245). This is included to check expected syntax (feel free to edit, or even comment out this whole section and manually define the list-of-tuples via `elements_years = [('carbon', 96),('nitrogen', 96)]` (see line 253)) or similar.
@@ -69,7 +69,7 @@ elements_years = [];
         raise BaseException("--elements=\{...\} argument not given to fetch_adas_data.py. See makefile header and set the elements variable.")
 ```
 
-##<a name="reader"></a> Code for unpacking data from the JSON files
+## Code for unpacking data from the JSON files
 The key outputs are
 
 * `log_coeff[charge_state][plasma_temperature][plasma_density]` which stores the base-10 logarithm of the rate coefficient (in m^3/s).
