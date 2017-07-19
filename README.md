@@ -77,7 +77,7 @@ The key outputs are
 * `log_temperature` which stores the temperature points for which a `log_coeff` point is given.
 * `log_density` which stores the density points for which a `log_coeff` point is given.
 
-###python3
+### python3
 
 *To return a JSON object*
 ```python
@@ -127,7 +127,7 @@ for k in range(atomic_number):
   splines.append(RectBivariateSpline(x, y, z))
 ```
 
-###C++
+### C++
 Relies on the (frankly awesome) 'JSON for modern C++' library by nlohmann.
 Github: [github.com/nlohmann/json](https://github.com/nlohmann/json)
 You need to include the [json.hpp](https://github.com/nlohmann/json/blob/develop/src/json.hpp) header file in the same directory as your source at compile-time.
